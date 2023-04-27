@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class WaypointPath : MonoBehaviour
 {
+    [SerializeField] private MovingPlatform _movingPlatform;
     [SerializeField] private bool _reverseAtFinish = false;
     int increment = 1;
 
     public Transform GetWaypoint(int waypointIndex)
     {
-        Debug.Log("Waypoint index: " + waypointIndex);
         return transform.GetChild(waypointIndex);
     }
 
@@ -18,6 +18,10 @@ public class WaypointPath : MonoBehaviour
         // If currentWaypointIndex is the final waypoint
         if (currentWaypointIndex == transform.childCount - 1)
         {
+            // If the moving platform has _waitAtFinish set to true, set its trigger to false
+            if (_movingPlatform.WaitAtFinish)
+                _movingPlatform.Trigger = false;
+
             // If _reverstAtFinish is set to true
             if (_reverseAtFinish)
             {
@@ -35,6 +39,9 @@ public class WaypointPath : MonoBehaviour
         if (currentWaypointIndex == 0)
         {
             increment = 1;
+
+            if (_movingPlatform.WaitAtStart)
+                _movingPlatform.Trigger = false;
         }
 
         // Set nextWaypointIndex

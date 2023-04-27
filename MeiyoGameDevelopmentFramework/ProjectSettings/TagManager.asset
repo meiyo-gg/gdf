@@ -8,6 +8,12 @@ TagManager:
   - CameraController
   - CameraFollow
   - PlayerController
+  - Platform
+  - Button
+  - Lever
+  - Door
+  - Gate
+  - Portal
   layers:
   - Default
   - TransparentFX

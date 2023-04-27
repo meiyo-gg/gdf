@@ -39,12 +39,13 @@ public class StandardHumanoidLandController : MonoBehaviour
     [SerializeField] float _runSpeed = 4;
     [Tooltip("The speed of the player when they are crouching.")]
     [SerializeField] float _crouchSpeed = 0.9f;
+    [Tooltip("The speed of the player when they are jumping.")]
+    [SerializeField] float _jumpSpeed = 6f;
     float _speed = 1;
     Vector3 _direction = Vector3.zero;
 
     // External forces affecting movement and rotation
-    private Vector3 _platformMovement = Vector3.zero;
-    public Vector3 PlatformMovement { get { return _platformMovement; } set { _platformMovement = value; } } // Apply platform movement to character controller
+    // ...
 
     // Jumping and Gravity
     [Tooltip("Gravity is applied to the player when they are not grounded - it determines the rate of acceleration of the y-axis velocity when jumping or falling.")]
@@ -130,10 +131,9 @@ public class StandardHumanoidLandController : MonoBehaviour
     private void SetSpeed()
     {
         if (_input.CrouchIsPressed)
-        {
             _speed = _crouchSpeed;
-            
-        }
+        else if (_input.JumpIsPressed)
+            _speed = _jumpSpeed;
         else if (_input.RunIsPressed)
             _speed = _runSpeed;
         else
@@ -144,7 +144,7 @@ public class StandardHumanoidLandController : MonoBehaviour
     {
         _direction = (transform.TransformDirection(_playerMoveInput));
         _direction = new Vector3(_direction.x * _speed, _direction.y, _direction.z * _speed);
-        _characterController.Move((_direction * Time.deltaTime) + _platformMovement);
+        _characterController.Move((_direction * Time.deltaTime));
 
         _animator.SetFloat("VelocityX", _playerMoveInput.x * _speed, 0.1f, Time.deltaTime);
         _animator.SetFloat("VelocityZ", _playerMoveInput.z * _speed, 0.1f, Time.deltaTime);
@@ -169,10 +169,10 @@ public class StandardHumanoidLandController : MonoBehaviour
                 This is necessary to prevent bouncing when travelling down a slope*/
 
                 // Cast ray from bottom of the controller to ground
-                if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo, _characterController.height))
+                if (Physics.SphereCast(transform.position, _characterController.radius, Vector3.down, out RaycastHit hitInfo, _characterController.height))
                 {
 #if UNITY_EDITOR
-                    Debug.DrawRay(transform.position, Vector3.down * hitInfo.distance, Color.red, 5f, false);
+                    Debug.DrawRay(transform.position, Vector3.down * hitInfo.distance, Color.red, 2f, false);
 #endif
                     // Get rotation values of the ground
                     groundRotation = hitInfo.transform.rotation.eulerAngles;
