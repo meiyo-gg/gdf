@@ -115,9 +115,9 @@ MonoBehaviour:
   audioClip: {fileID: 0}
   objectsToBeActivated: []
   doorOpenAngle: 0
+  gateOpenDistance: 0
+  verticalGate: 0
   timeToComplete: 1
-  openDistance: 0
-  openLeft: 0
 --- !u!1 &2679166621658807679
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2679166621658807679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: aab61730fb974d0449af7a78c3810bb1, type: 2}
   m_CullingMode: 0
