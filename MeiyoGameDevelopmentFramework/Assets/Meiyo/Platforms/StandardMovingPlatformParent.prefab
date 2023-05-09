@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movingPlatform: {fileID: 358366641471816861}
-  _reverseAtFinish: 1
+  _reverseAtFinish: 0
 --- !u!1 &358366640460175418
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,8 +226,8 @@ MonoBehaviour:
   _waypointPath: {fileID: 358366640410288573}
   _platformCenter: {fileID: 358366641471816858}
   _speed: 1
-  _applySmoothing: 1
-  _waitForTrigger: 1
+  _applySmoothing: 0
+  _waitForTrigger: 0
   _waitAtStart: 0
   _waitAtFinish: 0
   _continuousRotation: 0

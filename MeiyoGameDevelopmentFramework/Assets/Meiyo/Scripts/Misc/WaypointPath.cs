@@ -5,7 +5,10 @@ using UnityEngine;
 public class WaypointPath : MonoBehaviour
 {
     [SerializeField] private MovingPlatform _movingPlatform;
-    [SerializeField] private bool _reverseAtFinish = false;
+    private bool reverseAtFinish = false;
+
+    public bool ReverseAtFinish { set { reverseAtFinish = value; } }
+
     int increment = 1;
 
     public Transform GetWaypoint(int waypointIndex)
@@ -23,7 +26,7 @@ public class WaypointPath : MonoBehaviour
                 _movingPlatform.Trigger = false;
 
             // If _reverstAtFinish is set to true
-            if (_reverseAtFinish)
+            if (reverseAtFinish)
             {
                 // Apply reverse
                 increment = -1;

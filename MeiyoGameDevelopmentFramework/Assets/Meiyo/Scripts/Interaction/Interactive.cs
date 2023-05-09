@@ -129,43 +129,51 @@ public class Interactive : MonoBehaviour
     IEnumerator OpenCloseGate(Interactive sender)
     {
         CanInteract = false;
-        Vector3 currentPosition = transform.position;
+        Vector3 translation;
         float elapsedTime = 0;
-        float elapsedPercentage = 0;
 
         if (!open)
         {
             open = true;
 
-            while (elapsedPercentage < 1)
+            if (!verticalGate)
+                translation = new Vector3(gateOpenDistance, 0, 0);
+            else
+                translation = new Vector3(0, gateOpenDistance, 0);
+
+            while (elapsedTime < timeToComplete)
             {
                 elapsedTime += Time.deltaTime;
-                elapsedPercentage = elapsedTime / timeToComplete;
 
-                if (!verticalGate)
-                    transform.position = Vector3.Lerp(currentPosition, new Vector3(currentPosition.x + gateOpenDistance, currentPosition.y, currentPosition.z), elapsedPercentage);
-                else
-                    transform.position = Vector3.Lerp(currentPosition, new Vector3(currentPosition.x, currentPosition.y + gateOpenDistance, currentPosition.z), elapsedPercentage);
+                transform.Translate(translation * (Time.deltaTime / timeToComplete));
 
                 yield return new WaitForEndOfFrame();
             }
+
+            if (!verticalGate)
+                transform.localPosition = new Vector3(gateOpenDistance, 1, 0);
+            else
+                transform.localPosition = new Vector3(0, gateOpenDistance + 1, 0);
         }
         else
         {
             open = false;
 
-            while (elapsedPercentage < 1)
+            if (!verticalGate)
+                translation = new Vector3(-gateOpenDistance, 0, 0);
+            else
+                translation = new Vector3(0, -gateOpenDistance, 0);
+
+            while (elapsedTime < timeToComplete)
             {
                 elapsedTime += Time.deltaTime;
-                elapsedPercentage = elapsedTime / timeToComplete;
 
-                if (!verticalGate)
-                    transform.position = Vector3.Lerp(currentPosition, new Vector3(currentPosition.x - gateOpenDistance, currentPosition.y, currentPosition.z), elapsedPercentage);
-                else
-                    transform.position = Vector3.Lerp(currentPosition, new Vector3(currentPosition.x, currentPosition.y - gateOpenDistance, currentPosition.z), elapsedPercentage);
+                transform.Translate(translation * (Time.deltaTime / timeToComplete));
 
                 yield return new WaitForEndOfFrame();
             }
+
+            transform.localPosition = new Vector3(0, 1, 0);
         }
 
         CanInteract = true;
