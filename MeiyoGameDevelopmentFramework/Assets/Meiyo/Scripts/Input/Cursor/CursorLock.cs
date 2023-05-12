@@ -4,13 +4,28 @@ using UnityEngine;
 
 public class CursorLock : MonoBehaviour
 {
-    private void OnEnable()
+    [SerializeField] private List<GameObject> UIPanels;
+
+    private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        SetCursorLockState();
     }
 
-    private void OnDisable()
+    public void SetCursorLockState()
     {
-        Cursor.lockState = CursorLockMode.None;
+        foreach (GameObject panel in UIPanels)
+        {
+            if (panel.activeInHierarchy)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                return;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                return;
+            }
+        }
+        // Can perform other checks here e.g. if cursor is locked/unlocked for a different reason to UI
     }
 }

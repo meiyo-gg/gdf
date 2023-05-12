@@ -38,53 +38,65 @@ public class PlayerInteract : MonoBehaviour
             {
                 Interactive interactive = hit.collider.gameObject.GetComponent<Interactive>();
 
-                if (interactWasPressedThisFrame && interactive.CanInteract)
+                if (interactive != null)
                 {
-                    interactive.Animate();
-                    interactive.PlayAudio();
+                    if (interactWasPressedThisFrame && interactive.CanInteract)
+                    {
+                        interactive.Animate();
+                        interactive.PlayAudio();
+                    }
+
+
+                    InteractiveType type = interactive.GetInteractiveType();
+                    switch (type)
+                    {
+                        case InteractiveType.NPC:
+                            Debug.Log("Talk [E]"); // will be replaced by UI
+                                                   // do something
+                            TalkToNpc(interactive);
+                            break;
+
+                        case InteractiveType.Door:
+                            Debug.Log("Open [E]"); // will be replaced by UI
+                                                   // do something
+                            if (interactWasPressedThisFrame && interactive.CanInteract) { interactive.CanInteract = false; interactive.Door(); }
+                            break;
+
+                        case InteractiveType.Gate:
+                            Debug.Log("Open [E]"); // will be replaced by UI
+                                                   // do something
+                            if (interactWasPressedThisFrame && interactive.CanInteract) { interactive.CanInteract = false; interactive.Gate(); }
+                            break;
+
+                        case InteractiveType.Button:
+                            Debug.Log("Press [E]"); // will be replaced by UI
+                                                    // do something
+                            if (interactWasPressedThisFrame && interactive.CanInteract) { interactive.CanInteract = false; interactive.ButtonLever(); }
+                            break;
+
+                        case InteractiveType.Lever:
+                            Debug.Log("Pull [E]"); // will be replaced by UI
+                                                   // do something
+                            if (interactWasPressedThisFrame && interactive.CanInteract) { interactive.CanInteract = false; interactive.ButtonLever(); }
+                            break;
+
+                        case InteractiveType.Portal:
+                            Debug.Log("Teleport [E]"); // will be replaced by UI
+                                                       // do something
+                            if (interactWasPressedThisFrame && interactive.CanInteract) { interactive.CanInteract = false; interactive.Portal(); }
+                            break;
+
+                        default:
+                            throw new Exception("Unknown interactive type.");
+                    }
                 }
 
-                InteractiveType type = interactive.GetInteractiveType();
-                switch (type)
+                CollectableItem collectable = hit.collider.gameObject.GetComponent<CollectableItem>();
+
+                if (collectable != null)
                 {
-                    case InteractiveType.NPC:
-                        Debug.Log("Talk [E]"); // will be replaced by UI
-                        // do something
-                        TalkToNpc(interactive);
-                        break;
-
-                    case InteractiveType.Door:
-                        Debug.Log("Open [E]"); // will be replaced by UI
-                        // do something
-                        if (interactWasPressedThisFrame && interactive.CanInteract) { interactive.CanInteract = false; interactive.Door(); }
-                        break;
-
-                    case InteractiveType.Gate:
-                        Debug.Log("Open [E]"); // will be replaced by UI
-                        // do something
-                        if (interactWasPressedThisFrame && interactive.CanInteract) { interactive.CanInteract = false; interactive.Gate();}
-                        break;
-
-                    case InteractiveType.Button:
-                        Debug.Log("Press [E]"); // will be replaced by UI
-                        // do something
-                        if (interactWasPressedThisFrame && interactive.CanInteract) { interactive.CanInteract = false; interactive.ButtonLever(); }
-                        break;
-
-                    case InteractiveType.Lever:
-                        Debug.Log("Pull [E]"); // will be replaced by UI
-                        // do something
-                        if (interactWasPressedThisFrame && interactive.CanInteract) { interactive.CanInteract = false; interactive.ButtonLever(); }
-                        break;
-
-                    case InteractiveType.Portal:
-                        Debug.Log("Teleport [E]"); // will be replaced by UI
-                        // do something
-                        if (interactWasPressedThisFrame && interactive.CanInteract) { interactive.CanInteract = false; interactive.Portal(); }
-                        break;
-
-                    default:
-                        throw new Exception("Unknown interactive type.");
+                    Debug.Log("Take " + collectable.item.itemName + " " + "[E]");
+                    if (interactWasPressedThisFrame) { collectable.Pickup(); }
                 }
             }
             else
