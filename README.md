@@ -2,9 +2,9 @@
 The Meiyo GDF is an open source framework that provides all kinds of tools for making high quality video games with the Unity Engine. The framework is designed to make it easy for aspiring/idie game developers to make ambitious games with tools that are usually only accessible to developers/studios with greater than average resources.
 
 # Getting Started
-To use Meiyo GDF tools, you must first install the correct version of Unity via Unity Hub (https://unity.com/download). The project currently uses version 2021.3.16f1.
+To use Meiyo GDF tools, you must first install the correct version of Unity via [Unity Hub](https://unity.com/download). The project currently uses version 2021.3.16f1.
 
-We recommend users download and install GitHub Desktop (https://desktop.github.com/) to manage the repository. This will enable you to easily update your project when new features are released.
+We recommend users download and install [GitHub Desktop](https://desktop.github.com/) to manage the repository. This will enable you to easily update your project when new features are released.
 
 For more information on how to get started, see our Getting Started guide: <coming soon>.
 
