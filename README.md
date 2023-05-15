@@ -1,4 +1,28 @@
-# Welcome to the Meiyo Game Development Framework
-The Meiyo GDF is an open source framework that provides the tools and guidance for making all kinds of high quality video games with the Unity Engine. The framework is designed to make it easy for aspiring/idie game developers to make complex games with tools that are usually only accessible to developers/studios with greater than average resources. 
+# Meiyo Game Development Framework
+The Meiyo GDF is an open source framework that provides all kinds of tools for making high quality video games with the Unity Engine. The framework is designed to make it easy for aspiring/idie game developers to make ambitious games with tools that are usually only accessible to developers/studios with greater than average resources.
 
-When aspiring game developers get started with Unity, they soon realise how much they need to learn before they can turn their idea into reality. The problem is that a lot of time is wasted _reinventing the wheel_; why spend time programming your own character controller when you can configure an existing one to meet your needs and move on to the next feature of your game? Of course, sometimes it is necessary to write custom scripts, but for many games the same tools can be reused to avoid wasting precious time.
+# Getting Started
+To use Meiyo GDF tools, you must first install the correct version of Unity via Unity Hub (https://unity.com/download). The project currently uses version 2021.3.16f1.
+
+We recommend users download and install GitHub Desktop (https://desktop.github.com/) to manage the repository. This will enable you to easily update your project when new features are released.
+
+For more information on how to get started, see our Getting Started guide: <coming soon>.
+
+# Contributing
+Please read [CONTRIBUTING] for details on our code of conduct and the process for submitting pull requests.
+  
+# Versioning
+We use [SemVer](https://semver.org/) for versioning. For the versions available, see the [tags on this repository].
+  
+# Authors
+* Andrew Morrin - _Initial Work_ - [meiyo-gg](https://github.com/meiyo-gg).
+  
+# License
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/meiyo-gg/gdf/blob/main/LICENSE) file for details.
+ 
+# Contact
+Please avoid contacting individual contributors directly for general inquiries or support. Instead, use the following channels:
+
+For bug reports and feature suggestions, follow the guidelines mentioned in the [CONTRIBUTING] file.
+For general questions or discussions, use the Discussions tab of this repository.
+For urgent or sensitive matters, you can reach out to the project maintainer via email at hello@meiyo.gg.
