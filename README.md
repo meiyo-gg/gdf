@@ -18,7 +18,7 @@ We use [SemVer](https://semver.org/) for versioning. For the versions available,
 * Andrew Morrin - _Initial Work_ - [meiyo-gg](https://github.com/meiyo-gg).
   
 # License
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/meiyo-gg/gdf/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see [LICENSE](https://github.com/meiyo-gg/gdf/blob/main/LICENSE) for details.
  
 # Contact
 Please avoid contacting individual contributors directly for general inquiries or support. Instead, use the following channels:
