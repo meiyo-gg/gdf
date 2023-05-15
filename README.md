@@ -23,6 +23,6 @@ This project is licensed under the MIT License - see [LICENSE](https://github.co
 # Contact
 Please avoid contacting individual contributors directly for general inquiries or support. Instead, use the following channels:
 
-For bug reports and feature suggestions, follow the guidelines mentioned in the [CONTRIBUTING](https://github.com/meiyo-gg/gdf/blob/main/CONTRIBUTING) file.
+For bug reports and feature suggestions, follow the guidelines mentioned in [CONTRIBUTING](https://github.com/meiyo-gg/gdf/blob/main/CONTRIBUTING).
 For general questions or discussions, use the Discussions tab of this repository.
 For urgent or sensitive matters, you can reach out to the project maintainer via email at hello@meiyo.gg.
