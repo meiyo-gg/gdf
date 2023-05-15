@@ -1,0 +1,1 @@
+public enum Category { All, Weapons, Apparel, Utilities, Books, Misc }

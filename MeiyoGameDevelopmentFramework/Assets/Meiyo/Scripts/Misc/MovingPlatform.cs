@@ -6,16 +6,17 @@ public class MovingPlatform : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private WaypointPath _waypointPath;
+    [SerializeField] private Transform _platformCenter;
 
     [Header("Parameters")]
-    [SerializeField] private Transform _platformCenter;
     [SerializeField] private float _speed;
     [SerializeField] private bool _applySmoothing = false;
+    [SerializeField] private bool _reverseAtFinish = false;
+    [SerializeField] private bool _continuousRotation = false;
+    [SerializeField] private float _rotationSpeed;
     [SerializeField] private bool _waitForTrigger = false;
     [SerializeField] private bool _waitAtStart = false;
     [SerializeField] private bool _waitAtFinish = false;
-    [SerializeField] private bool _continuousRotation = false;
-    [SerializeField] private float _rotationSpeed;
 
     public bool WaitAtStart { get { return _waitAtStart; } }
     public bool WaitAtFinish { get { return _waitAtFinish; } }
@@ -110,6 +111,7 @@ public class MovingPlatform : MonoBehaviour
         if (elapsedPercentage >= 1)
         {
             TargetNextWaypoint();
+            ReverseAtFinish();
         }
     }
 
@@ -192,6 +194,14 @@ public class MovingPlatform : MonoBehaviour
         platformTrigger.size = new Vector3(platformTrigger.size.x, (targetPlatformTriggerSizeY + difference) / scaleY, platformTrigger.size.z);
 
         platformTrigger.center = new Vector3(0, (platformTrigger.size.y * 0.5f) + 0.5f, 0);
+    }
+
+    private void ReverseAtFinish()
+    {
+        if (_reverseAtFinish)
+            _waypointPath.ReverseAtFinish = true;
+        else
+            _waypointPath.ReverseAtFinish = false;
     }
 
     public void TriggerEvent(Interactive sender)

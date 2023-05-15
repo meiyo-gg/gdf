@@ -330,13 +330,22 @@
             ]
         },
         {
-            "name": "Menu",
+            "name": "UI",
             "id": "a9409ddc-dfe5-45bf-9f80-c7fd45b5f261",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Inventory",
                     "type": "Button",
                     "id": "08f4e382-5bc8-4f05-8032-0ddaec494f79",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RemoveItem",
+                    "type": "Button",
+                    "id": "642b6d43-2c87-41f1-8fea-d07d5643bd59",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -347,11 +356,44 @@
                 {
                     "name": "",
                     "id": "371c9972-116e-4ec4-908f-c699a615f72a",
-                    "path": "",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23bda74d-7095-43b0-b5aa-6ec25a328966",
+                    "path": "<Gamepad>/dpad/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "051224b0-90c3-470e-9f1c-554a8a0e432b",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RemoveItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b53c7da-cd4b-46b0-9b69-ba1d0d1033c6",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RemoveItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

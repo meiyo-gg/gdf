@@ -174,3 +174,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+version https://git-lfs.github.com/spec/v1
+oid sha256:dbfffcdf2829dd2a6c4871ed29ba4c06f592f3e6706ef63a272ef6ed3c3687d7
+size 5041
+

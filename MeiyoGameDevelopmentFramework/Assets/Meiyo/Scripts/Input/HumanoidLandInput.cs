@@ -122,4 +122,10 @@ public class HumanoidLandInput : MonoBehaviour
     {
         ZoomCameraInput = ctx.ReadValue<float>();
     }
+
+    public void ResetInputs()
+    {
+        MoveInput = Vector2.zero;
+        LookInput = Vector2.zero;
+    }
 }
