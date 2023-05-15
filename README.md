@@ -9,7 +9,7 @@ We recommend users download and install [GitHub Desktop](https://desktop.github.
 For more information on how to get started, see our Getting Started guide: <coming soon>.
 
 # Contributing
-Please read [CONTRIBUTING] for details on our code of conduct and the process for submitting pull requests.
+Please read [CONTRIBUTING](https://github.com/meiyo-gg/gdf/blob/main/CONTRIBUTING) for details on our code of conduct and the process for submitting pull requests.
   
 # Versioning
 We use [SemVer](https://semver.org/) for versioning. For the versions available, see the [tags on this repository].
