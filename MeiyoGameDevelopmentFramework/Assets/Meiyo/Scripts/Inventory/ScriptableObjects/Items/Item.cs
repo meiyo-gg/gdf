@@ -7,6 +7,7 @@ public class Item : ScriptableObject
 {
     public int id;
     public string itemName;
-    public Category category;
+    public CategoryType category;
     public int value;
+    public int quantityInInventory;
 }

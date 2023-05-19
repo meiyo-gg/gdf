@@ -5,17 +5,17 @@ using UnityEngine.Rendering.HighDefinition;
 
 public class ButtonCategory : MonoBehaviour
 {
-    [SerializeField] private Category category;
+    [SerializeField] private CategoryType category;
 
-    public Category Category { get { return category; } }
+    public CategoryType Category { get { return category; } }
 
     public void UpdateSelectedCategory()
     {
         InventoryManager.Instance.UpdateSelectedCategoryButton(gameObject);
 
-        List<CustomPass> customPasses = GameObject.FindWithTag("ObjectUICustomPassVolume").GetComponent<CustomPassVolume>().customPasses;
+        /*List<CustomPass> customPasses = GameObject.FindWithTag("ObjectUICustomPassVolume").GetComponent<CustomPassVolume>().customPasses;
         CustomPass RenderObjectOnUI = customPasses.Find(x => x.name == "RenderObjectOnUI");
-        RenderObjectOnUI.enabled = false;
+        RenderObjectOnUI.enabled = false;*/
 
         InventoryManager.Instance.ListItems();
     }

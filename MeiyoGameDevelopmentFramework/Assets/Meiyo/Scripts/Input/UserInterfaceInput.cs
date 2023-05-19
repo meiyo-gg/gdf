@@ -22,9 +22,10 @@ public class UserInterfaceInput : MonoBehaviour
         _input.UI.Enable();
 
         _input.UI.Inventory.started += SetInventory;
-        _input.UI.Inventory.canceled += SetInventory; // ?
+        //_input.UI.Inventory.canceled += SetInventory;
 
         _input.UI.RemoveItem.started += RemoveSelectedItemFromInventory;
+        //_input.UI.RemoveItem.canceled += RemoveSelectedItemFromInventory;
 
         characterInputHandler = GameObject.FindWithTag("InputHandler");
     }
@@ -32,8 +33,11 @@ public class UserInterfaceInput : MonoBehaviour
     private void OnDisable()
     {
         _input.UI.Inventory.started -= SetInventory;
-        _input.UI.Inventory.canceled -= SetInventory;
+        //_input.UI.Inventory.canceled -= SetInventory;
+
         _input.UI.RemoveItem.started -= RemoveSelectedItemFromInventory;
+        //_input.UI.RemoveItem.canceled -= RemoveSelectedItemFromInventory;
+
         _input.UI.Disable();
     }
 
@@ -52,9 +56,9 @@ public class UserInterfaceInput : MonoBehaviour
         {
             _inventoryPanel.SetActive(false);
 
-            List<CustomPass> customPasses = GameObject.FindWithTag("ObjectUICustomPassVolume").GetComponent<CustomPassVolume>().customPasses;
+            /*List<CustomPass> customPasses = GameObject.FindWithTag("ObjectUICustomPassVolume").GetComponent<CustomPassVolume>().customPasses;
             CustomPass RenderObjectOnUI = customPasses.Find(x => x.name == "RenderObjectOnUI");
-            RenderObjectOnUI.enabled = false;
+            RenderObjectOnUI.enabled = false;*/
 
             _cursorLock.SetCursorLockState();
             characterInputHandler.SetActive(true);
@@ -63,8 +67,7 @@ public class UserInterfaceInput : MonoBehaviour
 
     private void RemoveSelectedItemFromInventory(InputAction.CallbackContext ctx)
     {
-        GameObject selectedItemButton = InventoryManager.Instance.SelectedItemButton;
-        // If pressed, remove selected item from inventory list, remove selectedItem reference, reset list in UI
-        //if (RemoveItemIsPressed && _inventoryManager)
+        RemoveItemIsPressed = ctx.started;
+        InventoryManager.Instance.Remove();
     }
 }

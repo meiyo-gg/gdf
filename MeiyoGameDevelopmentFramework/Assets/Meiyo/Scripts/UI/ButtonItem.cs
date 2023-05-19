@@ -5,13 +5,16 @@ using UnityEngine.Rendering.HighDefinition;
 
 public class ButtonItem : MonoBehaviour
 {
+    public Item item { get; set; }
+
     public void UpdateSelectedItem()
     {
         InventoryManager.Instance.UpdateSelectedItemButton(gameObject);
         /*CustomPassVolume customPassVolume = GameObject.FindWithTag("ObjectUICustomPassVolume").GetComponent<CustomPassVolume>();
         customPassVolume.enabled = true;*/
-        List<CustomPass> customPasses = GameObject.FindWithTag("ObjectUICustomPassVolume").GetComponent<CustomPassVolume>().customPasses;
+        
+        /*List<CustomPass> customPasses = GameObject.FindWithTag("ObjectUICustomPassVolume").GetComponent<CustomPassVolume>().customPasses;
         CustomPass RenderObjectOnUI = customPasses.Find(x => x.name == "RenderObjectOnUI");
-        RenderObjectOnUI.enabled = true;
+        RenderObjectOnUI.enabled = true;*/
     }
 }
