@@ -1,3 +1,4 @@
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 # Meiyo Game Development Framework
 The Meiyo GDF is an open source framework that provides all kinds of tools for making high quality video games with the Unity Engine. The framework is designed to make it easy for aspiring/idie game developers to make ambitious games with tools that are usually only accessible to developers/studios with greater than average resources.
 
