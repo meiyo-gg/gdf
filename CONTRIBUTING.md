@@ -37,12 +37,13 @@ Your contribution in reporting bugs is highly valuable, and we appreciate your e
 # Feature Suggestions
 We welcome suggestions for new features or enhancements to this repository. To suggest a new feature, please follow these steps:
 
-* Go to the [Issues](https://github.com/meiyo-gg/gdf/issues) section of this repository.
-* Click on the "New Issue" button.
-* Provide a clear and concise title and description of the suggested feature.
-* Explain why you believe it would benefit the repository.
-* Add appropriate labels to categorize the suggestion (e.g., "enhancement", "feature request").
-* Submit the issue.
+* Join the official [Meiyo Discord Server](https://discord.gg/w4e5Kkkkzd) and navigate to the _feature-suggestions_ channel in the _developers_ category.
+* Make a suggestion.
+* The community will vote for the feature suggestions that they believe are most important to them.
+* We will select the most popular feature suggestions and put them to a subscriber vote.
+* The feature suggestion that wins the subscriber vote will be implemented into the Meiyo Game Development Framework.
+* If your suggestion does not win the votes, don't worry, you can continue to make the suggestion until it receives enough support.
+* If you have already built the feature, you can bypass the subscriber vote - if the community wants to add the feature, we'll add it.
 
 We appreciate your creativity and ideas for improving this repository. Your feature suggestions contribute to its growth and success.
 
