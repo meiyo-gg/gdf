@@ -2,7 +2,7 @@
 Thank you for considering contributing to this project! We appreciate your time and effort in making this repository better. Please take a moment to review the following guidelines before getting started.
 
 # Code of Conduct
-This repository follows a Code of Conduct to ensure a respectful and inclusive environment for all contributors. By participating, you are expected to uphold this code. Please review the Code of Conduct to familiarize yourself with the expectations.
+This repository follows a [Code of Conduct](https://github.com/meiyo-gg/gdf/blob/main/CODE_OF_CONDUCT.md) to ensure a respectful and inclusive environment for all contributors. By participating, you are expected to uphold this code. Please review the Code of Conduct to familiarize yourself with the expectations.
 
 The Code of Conduct applies to:
 
