@@ -25,12 +25,11 @@ We value your contributions to maintaining a respectful and inclusive community.
 # Bug Reports
 If you encounter any issues or bugs while using this repository, please help us improve by submitting a bug report. To file a bug report, follow these steps:
 
-* Go to the [Issues](https://github.com/meiyo-gg/gdf/issues) section of this repository.
-* Click on the "New Issue" button.
-* Provide a descriptive title and detailed description of the bug, including steps to reproduce it.
-* Attach any relevant screenshots or error messages.
-* Add appropriate labels to categorize the issue (e.g., "bug", "help wanted").
-* Submit the issue.
+* Join the official [Meiyo Discord Server](https://discord.gg/w4e5Kkkkzd) and navigate to the _bugs_ channel in the _developers_ category.
+* Tell us about the bug - give a detailed description, use screenshots where possible, and outline the steps to reproduce it.
+* We'll review your message and try to reproduce the bug.
+* If we find that the issue is with the Meiyo Game Development Framework, we'll fix it and post an update.
+* If the issue is with Unity, we'll contact Unity support and attempt to solve the problem as quickly as possible.
 
 Your contribution in reporting bugs is highly valuable, and we appreciate your effort in making this repository more reliable.
 
